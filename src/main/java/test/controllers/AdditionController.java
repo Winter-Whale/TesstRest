@@ -20,13 +20,13 @@ public class AdditionController {
 
     @Autowired
     public AdditionController(AdditionService additionService) {
-    this.additionService = additionService;
+        this.additionService = additionService;
     }
 
     @PostMapping("/additionProd")
-    public ResponseEntity <ProdDTO> additionProd(
-            @RequestBody @Valid ProdDTO prodDTO, BindingResult bindingResult){
-        if (bindingResult.hasErrors()){
+    public ResponseEntity<ProdDTO> additionProd(
+            @RequestBody @Valid ProdDTO prodDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 

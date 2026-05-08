@@ -14,7 +14,9 @@ public class SpringConfig implements WebMvcConfigurer {
     private final LogInterceptor logInterceptor;
 
     @Autowired
-    public SpringConfig(LogInterceptor logInterceptor) {this.logInterceptor = logInterceptor;}
+    public SpringConfig(LogInterceptor logInterceptor) {
+        this.logInterceptor = logInterceptor;
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

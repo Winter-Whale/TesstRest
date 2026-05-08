@@ -10,16 +10,18 @@ import java.util.List;
 
 @Service
 public class ProdService {
-   private final ProdRepository prodRepository;
+    private final ProdRepository prodRepository;
 
     @Autowired
-    public ProdService(ProdRepository ProdRepository) {this.prodRepository= ProdRepository;}
+    public ProdService(ProdRepository ProdRepository) {
+        this.prodRepository = ProdRepository;
+    }
 
-    public List<ProdDTO> getAllProducts(){
+    public List<ProdDTO> getAllProducts() {
         return prodRepository.findAll();
     }
 
-    public ProdDTO getProductByID(Integer id){
+    public ProdDTO getProductByID(Integer id) {
         return prodRepository.getProductById(id);
     }
 
@@ -28,13 +30,13 @@ public class ProdService {
 
     }
 
-    public ProdDTO updateProduct(ProdDTO prodDTO) throws IOException  {
-         boolean result = prodRepository.updateProduct(prodDTO);
-         if (result) {
-             return getProductByID(prodDTO.getId());
-         }
-            throw  new IOException("update failed");
+    public ProdDTO updateProduct(ProdDTO prodDTO) throws IOException {
+        boolean result = prodRepository.updateProduct(prodDTO);
+        if (result) {
+            return getProductByID(prodDTO.getId());
         }
-
+        throw new IOException("update failed");
     }
+
+}
 

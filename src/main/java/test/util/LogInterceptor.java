@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LogInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("REQUEST BEFORE CONTROLLER: "+ request.getRequestURI());
+        System.out.println("REQUEST BEFORE CONTROLLER: " + request.getRequestURI());
         return true;
     }
 

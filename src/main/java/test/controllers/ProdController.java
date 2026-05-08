@@ -16,10 +16,14 @@ public class ProdController {
     private final ProdService prodService;
 
     @Autowired
-    public ProdController(ProdService prodService) {this.prodService = prodService;}
+    public ProdController(ProdService prodService) {
+        this.prodService = prodService;
+    }
 
     @GetMapping
-    public List<ProdDTO> getAllProduct() {return prodService.getAllProducts();}
+    public List<ProdDTO> getAllProduct() {
+        return prodService.getAllProducts();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProdDTO> getUserById(@PathVariable Integer id) {
@@ -31,7 +35,7 @@ public class ProdController {
     }
 
     @PutMapping
-    public ResponseEntity<ProdDTO> updateProduct(@RequestBody ProdDTO prodRequest) throws  IOException {
+    public ResponseEntity<ProdDTO> updateProduct(@RequestBody ProdDTO prodRequest) throws IOException {
         ProdDTO prod = prodService.updateProduct(prodRequest);
         return new ResponseEntity<>(prod, HttpStatus.OK);
     }

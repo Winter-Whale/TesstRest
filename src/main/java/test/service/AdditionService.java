@@ -20,8 +20,8 @@ public class AdditionService {
         this.transactionTemplate = transactionTemplate;
     }
 
-    public ProdDTO addition(ProdDTO prodDTO){
-        return transactionTemplate.execute(action ->{
+    public ProdDTO addition(ProdDTO prodDTO) {
+        return transactionTemplate.execute(action -> {
             Product product = new Product();
             product.setName(prodDTO.getName());
             product.setPrice(prodDTO.getPrice());
