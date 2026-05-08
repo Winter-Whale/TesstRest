@@ -13,11 +13,13 @@ import java.time.LocalDateTime;
 public class AdditionService {
     private final ProdRepository prodRepository;
     private final TransactionTemplate transactionTemplate;
+
     @Autowired
     public AdditionService(ProdRepository prodRepository, TransactionTemplate transactionTemplate) {
         this.prodRepository = prodRepository;
         this.transactionTemplate = transactionTemplate;
     }
+
     public ProdDTO addition(ProdDTO prodDTO){
         return transactionTemplate.execute(action ->{
             Product product = new Product();

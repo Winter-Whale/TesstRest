@@ -17,7 +17,8 @@ import test.service.AdditionService;
 public class AdditionController {
 
     private final AdditionService additionService;
-@Autowired
+
+    @Autowired
     public AdditionController(AdditionService additionService) {
     this.additionService = additionService;
     }

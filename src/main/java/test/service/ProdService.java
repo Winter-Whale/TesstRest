@@ -16,7 +16,8 @@ public class ProdService {
     public ProdService(ProdRepository ProdRepository) {this.prodRepository= ProdRepository;}
 
     public List<ProdDTO> getAllProducts(){
-        return prodRepository.findAll();}
+        return prodRepository.findAll();
+    }
 
     public ProdDTO getProductByID(Integer id){
         return prodRepository.getProductById(id);

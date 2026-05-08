@@ -14,7 +14,8 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProdController {
     private final ProdService prodService;
-@Autowired
+
+    @Autowired
     public ProdController(ProdService prodService) {this.prodService = prodService;}
 
     @GetMapping
@@ -30,9 +31,9 @@ public class ProdController {
     }
 
     @PutMapping
-    public ResponseEntity<ProdDTO> updateUser(@RequestBody ProdDTO prodRequest) throws  IOException {
-        ProdDTO user = prodService.updateProduct(prodRequest);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    public ResponseEntity<ProdDTO> updateProduct(@RequestBody ProdDTO prodRequest) throws  IOException {
+        ProdDTO prod = prodService.updateProduct(prodRequest);
+        return new ResponseEntity<>(prod, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
